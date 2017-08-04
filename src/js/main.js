@@ -33,7 +33,7 @@ statuesData.forEach(function(d) {
 			console.log(e);
 
 			document.querySelector(".tooltip").classList.remove("hide");
-			document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
+			document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
 		//$(window).scrollTop($('.tooltip').offset().top);
 
 		})

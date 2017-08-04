@@ -8,12 +8,13 @@
 		width: 100%;
 		height: 280px;
 	}
+	z-index: 0;
 }
 
 .head-container {
 	text-align: center;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 }
 
 .headline {
@@ -30,7 +31,7 @@
 	@media @small-mobile {
 		width: 300px;
 	}
-	z-index: 100000000;
+	//z-index: 100000000;
 }
 
 .leaflet-control-zoom {
@@ -52,10 +53,8 @@ p {
 	padding: 0;
 }
 
-img {
-	@media @mobile {
-		width: 100%;
-	}
+.mobile-img {
+	width: 100%;
 }
 
 .tooltip {
@@ -72,10 +71,6 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
-	//padding-top: 10px;
-	@media @mobile {
-
-	}
 	font-family: "AntennaRegular", Helvetica Neue, Helvetica, sans-serif;
 }
 
@@ -87,11 +82,11 @@ h3 {
 
 .caption {
 	font-size: 10px;
-	margin-top: -1px;
+	margin-top: -3px;
 	padding-bottom: 5px;
 	padding-right: 2px;
 	text-align: right;
-	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: "AntennaExtraLight", Helvetica Neue, Helvetica, sans-serif;
 
 	@media @mobile {
 		margin-top: -5px;
@@ -106,6 +101,50 @@ display: block;
 	padding-top: 10px;
 }
 
+.leaflet-popup-content {
+	font-family: "AntennaRegular", Helvetica Neue, Helvetica, sans-serif;
+}
+
 .leaflet-control-zoom {
 	display: none;
+}
+
+.leaflet-left {
+	display: none;
+}
+
+.leaflet-right {
+	z-index: 1 !important;
+}
+
+.leaflet-zoom {
+	z-index: 1 !important;
+}
+
+.leaflet-top {
+	z-index: 1 !important;
+}
+
+.leaflet-pane {
+	z-index: 0 !important;
+}
+
+html {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.interactive-container {
+	height: 1000px;
+}
+
+.instruction {
+	text-align: center;
+	font-family: "AntennaExtraLight", Helvetica Neue, Helvetica, sans-serif;
+	font-size: 14px;
+	padding-bottom: 15px;
+}
+
+.marker {
+	max-height: 15px;
 }
