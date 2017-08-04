@@ -25,12 +25,14 @@ statuesData.forEach(function(d) {
 	if (screen.width >= 480) {
 		point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
 	} else {
-		point.addEventListener("click", function(e) {
+		point.on("click", function() {
 			//$('window').scrollTop($('.tooltip').offset().top);
+			console.log($('html,body').scrollTop());
 			$('html, body').animate({
 				scrollTop: $('.tooltip').offset().top - 35
 			}, 600);
-			console.log(e);
+			//console.log(e);
+			console.log($('html,body').scrollTop());
 
 			document.querySelector(".tooltip").classList.remove("hide");
 			document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;

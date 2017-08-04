@@ -45,9 +45,6 @@
 }
 
 
-.leaflet-top, .leaflet-bottom {
-	z-index: 0;
-}
 
 p {
 	padding: 0;
@@ -55,6 +52,10 @@ p {
 
 .mobile-img {
 	width: 100%;
+}
+
+img {
+	z-index: 1000;
 }
 
 .tooltip {
@@ -103,7 +104,10 @@ display: block;
 
 .leaflet-popup-content {
 	font-family: "AntennaRegular", Helvetica Neue, Helvetica, sans-serif;
+	z-index: 1100;
 }
+
+
 
 .leaflet-control-zoom {
 	display: none;
@@ -126,7 +130,23 @@ display: block;
 }
 
 .leaflet-pane {
+	z-index: 1 !important;
+}
+
+.leaflet-control {
 	z-index: 0 !important;
+}
+
+.leaflet-popup {
+	z-index: 1100;
+}
+
+.leaflet-popup-content-wrapper {
+	z-index: 1100;
+}
+
+.leaflet-popup-pane {
+	z-index: 1100;
 }
 
 html {
@@ -148,3 +168,5 @@ html {
 .marker {
 	max-height: 15px;
 }
+
+.leaflet-marker-icon {}
