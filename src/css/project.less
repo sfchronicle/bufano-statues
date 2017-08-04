@@ -1,0 +1,110 @@
+#statues-map {
+	width: 600px;
+	height: 600px;
+	margin: 0 auto;
+	padding-top: 40px;
+
+	@media @mobile {
+		width: 100%;
+		height: 280px;
+	}
+}
+
+.head-container {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.headline {
+	font-family: "AntennaRegular", Helvetica Neue, Helvetica, sans-serif;
+}
+
+.dek {
+	font-family: "AntennaExtraLight", Helvetica Neue, Helvetica, sans-serif;
+	font-size: 14px;
+	padding-top: 10px;
+}
+
+.leaflet-popup-content-wrapper {
+	@media @small-mobile {
+		width: 300px;
+	}
+	z-index: 100000000;
+}
+
+.leaflet-control-zoom {
+ display: block !important;
+ top: 30px !important;
+ right: 20px !important;
+ @media @mobile {
+   top: 5px !important;
+   right: 2px !important;
+ }
+}
+
+
+.leaflet-top, .leaflet-bottom {
+	z-index: 0;
+}
+
+p {
+	padding: 0;
+}
+
+img {
+	@media @mobile {
+		width: 100%;
+	}
+}
+
+.tooltip {
+	//position: absolute;
+	background: white;
+	padding: 10px;
+	border: 1px solid #d3d3d3;
+	border-radius: 5px;
+	font-size: 12px;
+	width: 95%;
+	&.hide {
+		display: none;
+	}
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	//padding-top: 10px;
+	@media @mobile {
+
+	}
+}
+
+h3 {
+	@media @mobile {
+		margin-top: 0;
+	}
+}
+
+.caption {
+	font-size: 10px;
+	margin-top: -1px;
+	padding-bottom: 5px;
+	padding-right: 2px;
+	text-align: right;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+	@media @mobile {
+		margin-top: -5px;
+	}
+}
+
+.credit {
+display: block;
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: 10px;
+	padding-top: 10px;
+}
+
+.leaflet-control-zoom {
+	display: none;
+}

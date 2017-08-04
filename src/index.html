@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title><%= json.project.seo_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="__sync_contentCategory" content="meterA">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+    <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %>
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+
+  <%= !json.project.embedded ? "<body>" : "<body is='responsive-body'>" %>
+
+  <div class="head-container">
+    <div class="headline">Bufano statues across SF</div>
+    <div class="dek">some kinda description as usual</div>
+  </div>
+
+  <div id="statues-map"></div>
+  <div class="tooltip hide"></div>
+
+  <div class="credit">
+  <div class="entry">Jackie Gu  &bull; <a href="mailto:jgu@sfchronicle.com">jgu@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/jqlngu" target="_blank">@jqlngu</a></div>
+  <div class="entry">Sam Whiting  &bull; <a href="mailto:swhiting@sfchronicle.com">swhiting@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/SamWhitingSF" target="_blank">@SamWhitingSF</a></div>
+  </div>
+
+
+    <script>
+      var statuesData = <%= JSON.stringify(csv.bufano) %>;
+    </script>
+    <script src="app.js" async></script>
+
+  </body>
+</html>
