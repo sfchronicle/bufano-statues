@@ -1,6 +1,6 @@
 require("./lib/social"); //Do not delete
 
-var map = L.map('statues-map');
+var map = L.map('statues-map', { zoomControl : false });
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
   maxZoom: 18, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
@@ -15,8 +15,8 @@ if (screen.width <= 480) {
 // dosable zooming on scroll
 map.scrollWheelZoom.disable();
 
-L.control.zoom({
-    position:'topright'
+new L.control.zoom({
+    position:'bottomleft'
 }).addTo(map);
 
 statuesData.forEach(function(d) {
