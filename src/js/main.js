@@ -14,6 +14,7 @@ if (screen.width <= 480) {
 
 // dosable zooming on scroll
 map.scrollWheelZoom.disable();
+map.doubleClickZoom.disable();
 
 new L.control.zoom({
     position:'bottomleft'
@@ -23,7 +24,13 @@ statuesData.forEach(function(d) {
 	var point = L.marker([d.Lat, d.Lng]).addTo(map);
 
 	if (screen.width >= 480) {
-		point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
+		if (d.PhotoType == "landscape") {
+			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
+		} else if (d.PhotoType == "square") {
+			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
+		} else if (d.PhotoType == "portrait") {
+			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
+		}
 	} else {
 		point.on("click", function() {
 			//$('window').scrollTop($('.tooltip').offset().top);
