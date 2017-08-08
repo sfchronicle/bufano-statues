@@ -20,8 +20,13 @@ new L.control.zoom({
     position:'bottomleft'
 }).addTo(map);
 
+
+
+
 statuesData.forEach(function(d) {
 	var point = L.marker([d.Lat, d.Lng]).addTo(map);
+	//point.classList.add("point");
+	//console.log(point);
 
 	if (screen.width >= 480) {
 		if (d.PhotoType == "landscape") {
@@ -32,13 +37,25 @@ statuesData.forEach(function(d) {
 			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
 		}
 	} else {
+
+		// function resize() {
+		// 	console.log(height.clientHeight);
+		// 	return height.clientHeight;
+		// }
+		
 		point.on("click", function() {
+			console.log($(window).scrollTop());
+			var height = document.querySelector('#wrap').clientHeight + 140;
+			console.log(height);
 			// scroll to tooltip window
 			// $('html, body').animate({
 			// 	scrollTop: $('.tooltip').offset().top - 35
 			// }, 600);
+			//console.log($('.tooltip').offset().top);
 
-			pymChild.scrollParentToChildEl('_tooltip');
+			//pymChild.scrollParentTo('scroll-to-bottom');
+			pymChild.sendMessage('test', height);
+
 
 			// add tooltip window
 			document.querySelector(".tooltip").classList.remove("hide");
