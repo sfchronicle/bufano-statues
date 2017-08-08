@@ -33,24 +33,20 @@ statuesData.forEach(function(d) {
 		}
 	} else {
 		point.on("click", function() {
-			//$('window').scrollTop($('.tooltip').offset().top);
-			console.log($('html,body').scrollTop());
+			// scroll to tooltip window
 			$('html, body').animate({
 				scrollTop: $('.tooltip').offset().top - 35
 			}, 600);
-			//console.log(e);
-			console.log($('html,body').scrollTop());
 
+			// add tooltip window
 			document.querySelector(".tooltip").classList.remove("hide");
-					if (d.PhotoType == "landscape") {
-			document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
-		} else if (d.PhotoType == "square") {
-			document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
-		} else if (d.PhotoType == "portrait") {
-			document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description;
-		}
-			// document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
-		//$(window).scrollTop($('.tooltip').offset().top);
+			if (d.PhotoType == "landscape") {
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
+			} else if (d.PhotoType == "square") {
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
+			} else if (d.PhotoType == "portrait") {
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description;
+			}
 
 		})
 	}
