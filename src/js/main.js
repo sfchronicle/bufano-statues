@@ -37,6 +37,7 @@ statuesData.forEach(function(d) {
 			$('html, body').animate({
 				scrollTop: $('.tooltip').offset().top - 35
 			}, 600);
+			pymChild.sendHeight();
 
 			// add tooltip window
 			document.querySelector(".tooltip").classList.remove("hide");
