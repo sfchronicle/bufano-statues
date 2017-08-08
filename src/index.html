@@ -24,7 +24,7 @@
 
   <div class="instruction"><img class="marker" src="assets/marker.png">  Click to read more about each statue</div>
   <div id="statues-map"></div>
-  <div class="tooltip hide"></div>
+  <div class="tooltip hide" id="_tooltip"></div>
 
   <div class="credit">
   <div class="entry">Jackie Gu  &bull; <a href="mailto:jgu@sfchronicle.com">jgu@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/jqlngu" target="_blank">@jqlngu</a></div>
@@ -34,7 +34,7 @@
 
 
     <script>
-      var pymChild = new pym.Child();
+      var pymChild = new pym.Child({polling: 600});
       var statuesData = <%= JSON.stringify(csv.bufano) %>;
     </script>
     <script src="app.js" async></script>

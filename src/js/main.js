@@ -34,10 +34,11 @@ statuesData.forEach(function(d) {
 	} else {
 		point.on("click", function() {
 			// scroll to tooltip window
-			$('html, body').animate({
-				scrollTop: $('.tooltip').offset().top - 35
-			}, 600);
-			pymChild.sendHeight();
+			// $('html, body').animate({
+			// 	scrollTop: $('.tooltip').offset().top - 35
+			// }, 600);
+
+			pymChild.scrollParentToChildEl('_tooltip');
 
 			// add tooltip window
 			document.querySelector(".tooltip").classList.remove("hide");
@@ -48,6 +49,8 @@ statuesData.forEach(function(d) {
 			} else if (d.PhotoType == "portrait") {
 				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description;
 			}
+
+			pymChild.sendHeight();
 
 		})
 	}
