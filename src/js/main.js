@@ -29,15 +29,18 @@ statuesData.forEach(function(d) {
 	//console.log(point);
 
 	if (screen.width >= 480) {
-		if (d.PhotoType == "landscape") {
-			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
-		} else if (d.PhotoType == "square") {
-			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
-		} else if (d.PhotoType == "portrait") {
+		if (d.PhotoType != "portrait") {
+			console.log("hello");
+			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/300x0.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
+		} 
+		// else if (d.PhotoType == "square") {
+		// 	point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/300x0.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
+		// } else if (d.PhotoType == "custom") {
+		// 	point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/300x0.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
+		// } 
+		else if (d.PhotoType == "portrait") {
 			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
-		} else if (d.PhotoType == "custom") {
-			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/300x0.jpg'></div>" + "<div class='caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
-		}
+		} 
 	} else {
 
 		// function resize() {
