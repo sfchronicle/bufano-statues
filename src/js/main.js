@@ -35,6 +35,8 @@ statuesData.forEach(function(d) {
 			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description, {keepInView:true});
 		} else if (d.PhotoType == "portrait") {
 			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
+		} else if (d.PhotoType == "custom") {
+			point.bindPopup("<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/300x0.jpg'></div>" + "<div class='caption'>"+d.Photographer+"</div>" + d.Description, {keepInView:true});
 		}
 	} else {
 
@@ -60,11 +62,13 @@ statuesData.forEach(function(d) {
 			// add tooltip window
 			document.querySelector(".tooltip").classList.remove("hide");
 			if (d.PhotoType == "landscape") {
-				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/landscape_medium.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
 			} else if (d.PhotoType == "square") {
-				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_large.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<img class='mobile-img' src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/square_medium.jpg'>" + "<div class='caption'>"+d.Photographer+"</div>" +  d.Description;
 			} else if (d.PhotoType == "portrait") {
-				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_large.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description;
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<div class='img-portrait'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/portrait_medium.jpg'></div>" + "<div class='portrait-caption'>"+d.Photographer+"</div>" + d.Description;
+			} else if (d.PhotoType == "custom") {
+				document.querySelector(".tooltip").innerHTML = "<h3>"+ d.Name + "</h3>" + "<div class='mobile-img'><img src='http://ww1.hdnux.com/photos/63/40/57/"+d.PhotoID+"/3/280x0.jpg'></div>" + "<div class='caption'>"+d.Photographer+"</div>" + d.Description;
 			}
 
 			pymChild.sendHeight();
