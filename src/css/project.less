@@ -1,38 +1,77 @@
 #statues-map {
-	width: 600px;
-	height: 600px;
-	margin: 0 auto;
-	padding-top: 40px;
+	width: 435px;
+	height: 570px;
+	//margin: 0 auto;
+	display: inline-block;
+	float: left;
 
 	@media @mobile {
 		width: 100%;
 		height: 280px;
+		display: block;
 	}
 	z-index: 0;
 }
 
+.map-container {
+	margin: 0 auto;
+	max-width: 783px;
+	border:1px solid #a9a9a9;
+	border-radius: 5px;
+	height: 590px;
+	padding: 10px;
+	@media @mobile {
+		border: none;
+		height: auto;
+		padding: 0;
+
+	}
+}
+
 .head-container {
+	display: none;
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 15px;
+	@media @mobile {
+		display: block;
+		padding-bottom: 0;
+	}
 }
 
 .headline {
 	font-family: "AntennaBlack", Helvetica Neue, Helvetica, sans-serif;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	@media @mobile {
+		display: none;
+	}
+
+}
+
+.headline-mobile {
+		font-family: "AntennaBlack", Helvetica Neue, Helvetica, sans-serif;
+	text-align: center;
 }
 
 .dek {
 	font-family: "AntennaRegular", Helvetica Neue, Helvetica, sans-serif;
 	font-size: 14px;
-	padding-top: 15px;
+	padding-top: 210px;
 	max-width: 630px;
 margin: 0 auto;
+text-align: center;
+@media @mobile {
+	padding-top: 15px;
+}
 }
 
 .leaflet-popup-content-wrapper {
 	@media @small-mobile {
 		width: 300px;
 	}
+	//height: 600px;
 	//z-index: 100000000;
 }
 
@@ -54,30 +93,50 @@ img {
 
 .img-portrait {
 	width: 100%;
-	text-align: center;
+	text-align: left;
 }
 
 .tooltip {
-	//position: absolute;
+	// position: absolute;
 	background: white;
-	padding: 10px;
-	border: 1px solid #d3d3d3;
-	border-radius: 5px;
+	padding: 0;
 	font-size: 12px;
-	width: 95%;
-	&.hide {
-		display: none;
-	}
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
+
+	margin-left: 15px;
+	//margin-top: 20px;
 	font-family: "AntennaRegular", Helvetica Neue, Helvetica, sans-serif;
+	display: inline-block;
+	width: 310px;
+	
+	@media @mobile {
+		
+		margin-top: 10px;
+		width: 95%;
+		margin-left: 2%;
+		//margin-right: auto;
+		padding: 10px;
+		border: 1px solid #d3d3d3;
+		border-radius: 5px;
+		background: white;
+	}
 }
 
-h3 {
-	@media @mobile {
-		margin-top: 0;
+.tooltip-background {
+	position: absolute;
+	display: inline-block;
+	z-index: -1;
+	width: 320px;
+	height: 570px;
+	background: white;
+	margin-left: 10px;
+	@media @mobile{
+		display: none;
 	}
+}
+
+
+h3 {
+	margin-top: 0;
 }
 
 .caption {
@@ -85,7 +144,8 @@ h3 {
 	margin-top: -3px;
 	padding-bottom: 5px;
 	padding-right: 2px;
-	text-align: right;
+	padding-left: 0;
+	text-align: left;
 	font-family: "AntennaExtraLight", Helvetica Neue, Helvetica, sans-serif;
 
 	@media @mobile {
@@ -110,7 +170,7 @@ h3 {
 
 .credit {
 display: block;
-	max-width: 600px;
+	max-width: 783px;
 	margin: 0 auto;
 	font-size: 10px;
 	padding-top: 10px;
@@ -139,10 +199,17 @@ display: block;
 	font-family: "AntennaExtraLight", Helvetica Neue, Helvetica, sans-serif;
 	font-size: 14px;
 	padding-bottom: 15px;
+	padding-top: 15px;
 }
 
 .marker {
 	max-height: 15px;
 }
 
-.leaflet-marker-icon {}
+.interactive-container {
+	//max-width: 783px;
+}
+
+.hide {
+	display: none;
+}
